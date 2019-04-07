@@ -1,13 +1,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lime-system
-PKG_VERSION=2019-03-14-1552588427
+PKG_VERSION=17.06.1-2018-08-23-1535050602
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/libremesh/lime-packages.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=7af7f0506bcc00286db4cf1f6d1ff207ccf5c4ef
+PKG_SOURCE_VERSION:=704029cd350ec30ce336420ed556b873d342ff4c
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 PKG_LICENSE:=GPL-3.0
 PKGARCH:=all
@@ -55,7 +55,7 @@ LIME_VERSION_SED:=$(SED)   's,%LIME_ID%,$(LIME_ID),g' \
 
 define Package/lime-system/install
 	$(INSTALL_DIR) $(1)/
-	$(CP) ./packages/lime-system/files/* $(1)/
+	$(CP) $(PKG_BUILD_DIR)/packages/lime-system/files/* $(1)/
 	$(LIME_VERSION_SED) \
 		$(1)/etc/lime_release \
 		$(1)/etc/uci-defaults/90_lime-banner

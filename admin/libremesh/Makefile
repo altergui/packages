@@ -1,15 +1,24 @@
+
+
+
+
+
+
+
+
+
+
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lime-system
-PKG_VERSION=17.06.1-2018-08-23-1535050602
+PKG_VERSION=v17.06
 PKG_RELEASE:=1
 
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/libremesh/lime-packages.git
+PKG_SOURCE_URL:=https://github.com/libremesh/lime-packages/releases/download/$(PKG_NAME)-$(PKG_VERSION)/
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=704029cd350ec30ce336420ed556b873d342ff4c
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
-PKG_LICENSE:=GPL-3.0
+PKG_LICENSE:=AGPL-3.0
 PKGARCH:=all
 
 LIME_ID:=LiMe
